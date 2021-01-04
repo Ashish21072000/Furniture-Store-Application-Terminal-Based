@@ -36,4 +36,4 @@ To run application:
 
 ########################################################################
 
-MAKE SURE TO USE YOUR LINK AND DATABASE IN ORDER TO ACCESS THE DATA
+MAKE SURE TO USE YOUR LINK TO YOUR DATABASE IN ORDER TO ACCESS THE DATA
