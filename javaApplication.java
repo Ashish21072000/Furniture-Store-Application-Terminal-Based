@@ -6,11 +6,7 @@ class insert
 {
 public static boolean Addtocart(String pname,int price, String tablename,Statement stmt)throws SQLException
 {
-/*
-   Class.forName("oracle.jdbc.driver.OracleDriver");
-   //registering type4 driver
-   Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-   Statement stmt=con.createStatement();*/
+
    String q1="insert into " + tablename + " values ('" + pname + "' , '"+ price +"' )";
    
    int x=stmt.executeUpdate(q1);
@@ -24,10 +20,7 @@ public static boolean Addtocart(String pname,int price, String tablename,Stateme
 class fetch
 {
   public static String fetch_pname(int product,String tablename,Statement stmt)throws IOException, SQLException{
-/*
-    Class.forName("oracle.jdbc.driver.OracleDriver");
-    Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-    Statement stmt=con.createStatement();*/
+
     String q1="select product_Name from " + tablename + " where e_no ='" + product + "'";
     ResultSet y= stmt.executeQuery(q1);
     y.next();
@@ -41,14 +34,10 @@ class fetch
    public static int fetch_table(String table_name,Statement stmt)throws IOException {   //Not for Cart
                                                                                 
       BufferedReader ds= new BufferedReader(new InputStreamReader(System.in));
-      //System.out.println("Enter eid where name is to be fetched");
-      //int eno=Integer.parseInt(ds.readLine());
+      
       int DisplayRows = 15;
       try
-      {/*
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-        Statement stmt=con.createStatement();*/
+      {
         
         String q1="select * from "+ table_name;
         ResultSet x=stmt.executeQuery(q1);
@@ -68,9 +57,9 @@ class fetch
           row_counter+=1;
           count += 1;
           for(i = 1; i <= columnsNumber; i ++){
-            //System.out.print(i + ". ")
-            System.out.print(x.getString(i) + " | ");   // for Decorative purpose
-          }///////////////////////////////////////////////We can add option "More" /////////////////////////////////////////////////////
+            
+            System.out.print(x.getString(i) + " | ");   
+          }
           System.out.println("");
           while(true){
             if(count == DisplayRows){
@@ -94,7 +83,7 @@ class fetch
         int choice2 = Integer.parseInt(ds.readLine());
         return choice2;
         
-     //con.close();
+     
      }
      
         
@@ -109,14 +98,10 @@ class fetch
 public static int fetch_table_cart(String table_name,Statement stmt)throws IOException{        //Can be Used for CART
 
    BufferedReader ds= new BufferedReader(new InputStreamReader(System.in));
-   //System.out.println("Enter eid where name is to be fetched");
-   //int eno=Integer.parseInt(ds.readLine());
+   
    int DisplayRows = 15;
    try
-   {/*
-     Class.forName("oracle.jdbc.driver.OracleDriver");
-     Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-     Statement stmt=con.createStatement();*/
+   {
      String q1="select * from "+ table_name;
      ResultSet x=stmt.executeQuery(q1);
      ResultSetMetaData rsmd = x.getMetaData();
@@ -147,7 +132,7 @@ public static int fetch_table_cart(String table_name,Statement stmt)throws IOExc
     System.out.println("Total price is : " + price);
     return price;
 
-  //con.close();
+  
   }
 
 
@@ -161,14 +146,9 @@ public static int fetch_table_cart(String table_name,Statement stmt)throws IOExc
 public static String fetch_data(String element_no, String table_name,Statement stmt)throws IOException
    {
       BufferedReader ds= new BufferedReader(new InputStreamReader(System.in));
-      //System.out.println("Enter eid where name is to be fetched");
-      //int eno=Integer.parseInt(ds.readLine());
      
       try
-      {/*
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-        Statement stmt=con.createStatement();*/
+      {
         String q1="select * from "+ table_name + " where e_no ='"+ Integer.parseInt(element_no) +"'";
         ResultSet x=stmt.executeQuery(q1);
         ResultSetMetaData rsmd = x.getMetaData();
@@ -204,10 +184,7 @@ public static String fetch_data(String element_no, String table_name,Statement s
 
   public static boolean loginCheck(String iUserName, String iPassword,Statement stmt){
     try
-      {/*
-        Class.forName("oracle.jdbc.driver.OracleDriver");
-        Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XE","system","omkar2001");
-        Statement stmt=con.createStatement();*/
+      {
         String q1="select * from userAccounts where username = '" + iUserName + "' and password ='" + iPassword + "'";
         ResultSet x=stmt.executeQuery(q1);
         
