@@ -10,7 +10,7 @@ public class Creator{
         try{
             Class.forName("com.mysql.jdbc.Driver");
             
-            try(Connection con = DriverManager.getConnection("your_url"))
+            try(Connection con = DriverManager.getConnection("your_url"))//It also has username and password which you have to enter in function after your url.
             {
                 Statement stmt=con.createStatement();
                 String[] los = {"Chair", "DiningTable", "Sofa", "Bed", "Wardrobe"};
