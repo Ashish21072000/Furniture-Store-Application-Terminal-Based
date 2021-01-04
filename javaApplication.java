@@ -398,7 +398,7 @@ public static void Emptycart(String username,Statement stmt) throws SQLException
             choice = Integer.parseInt(ds.readLine());
             try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://sql12.freesqldatabase.com:3306/sql12371159","sql12371159","2hq7cvQ8S1");
+            Connection con=DriverManager.getConnection("your_url");//it also has username and password for which you will input them after url seperated by commas
             Statement stmt=con.createStatement();
             
             switch(choice){
