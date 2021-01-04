@@ -37,3 +37,4 @@ To run application:
 ########################################################################
 
 MAKE SURE TO USE YOUR LINK TO YOUR DATABASE IN ORDER TO ACCESS THE DATA
+DATA FLOW WILL HELP YOU TO UNDERSTAND THE LAYOUT OF THE APPLICATION
